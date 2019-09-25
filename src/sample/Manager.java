@@ -16,14 +16,16 @@ public class Manager{
 
         try {
             Statement stmt = this.con.createStatement();
-            rs = stmt.executeQuery("SELECT * FROM employee;");
+            rs = stmt.executeQuery("SELECT * FROM product;");
 
             while(rs.next()) {
                 System.out.printf("uID = %d%n", rs.getInt("uid"));
                 System.out.printf("Name = %s%n", rs.getString("name"));
+                //System.out.printf
+                //System.out.printf
             }
-        } catch (SQLException var3) {
-            this.sqlExceptionHandler(var3);
+        } catch (SQLException e) {
+            this.sqlExceptionHandler(e);
         }
 
     }
@@ -31,8 +33,8 @@ public class Manager{
     public void closeCon() {
         try {
             this.con.close();
-        } catch (SQLException var2) {
-            this.sqlExceptionHandler(var2);
+        } catch (SQLException e) {
+            this.sqlExceptionHandler(e);
         }
 
     }
