@@ -19,10 +19,10 @@ public class Manager{
             rs = stmt.executeQuery("SELECT * FROM product;");
 
             while(rs.next()) {
-                System.out.printf("uID = %d%n", rs.getInt("uid"));
+                System.out.printf("ID = %d%n", rs.getInt("id"));
                 System.out.printf("Name = %s%n", rs.getString("name"));
-                //System.out.printf
-                //System.out.printf
+                System.out.printf("Type = %s%n", rs.getString("type"));
+                System.out.printf("Manufacture =%%n",rs.getString("manufacture") );
             }
         } catch (SQLException e) {
             this.sqlExceptionHandler(e);
